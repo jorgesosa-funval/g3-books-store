@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import BookCard from "../components/book-card";
+import AppLayout from "../components/layouts/app-layout";
 
 export default function Home() {
     const [data, setData] = useState(null);
@@ -10,24 +12,17 @@ export default function Home() {
     useEffect(() => {
         fetchData()
     }, [])
-    return (
-        <div className="books-grid">
-           {data && 
-            data.slice(0,13).map(book =>{
-                return <BookCard key={book.isbn}/>
-            })
+    return ( 
+            <div className="books-grid">
+                {data &&
+                    data.slice(0, 13).map(book => {
+                        return <BookCard key={book.isbn} />
+                    })
 
-           }
-        </div>
+                }
+            </div> 
     )
 }
 
 
-export function BookCard() {
-    return (
-        <div className="w-full h-72 bg-gray-400">
-
-        </div>
-    )
-}
 
