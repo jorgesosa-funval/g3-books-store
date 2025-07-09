@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+
+.books-grid{
+ @apply grid justify-center gap-2;
+ grid-template-columns: repeat(auto-fill, 240px);
+}
